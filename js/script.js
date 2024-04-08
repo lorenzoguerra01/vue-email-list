@@ -20,10 +20,13 @@ createApp({
     methods: {
         getRandomEmail() {
             const emailList = [];
-            axios.get(`${this.apiPath}random/mail`).then((response) => {
-                let email = response.data.response;
-                this.rndEmails.push(email);
-            })
+            for (let i = 0; i < 10; i++) {
+                axios.get(`${this.apiPath}random/mail`).then((response) => {
+                    let email = response.data.response;
+                    emailList.push(email);
+                    this.rndEmails = [...emailList];
+                })
+            }
         }
     },
     computed: {

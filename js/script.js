@@ -19,11 +19,10 @@ createApp({
     },
     methods: {
         getRandomEmail() {
+            const emailList = [];
             axios.get(`${this.apiPath}random/mail`).then((response) => {
-                let emails = [];
-                while (emails.length < 10) {
-
-                }
+                let email = response.data.response;
+                this.rndEmails.push(email);
             })
         }
     },

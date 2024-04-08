@@ -13,13 +13,17 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            rndEmail: null
+            rndEmails: [],
+            apiPath: 'https://flynn.boolean.careers/exercises/api/'
         }
     },
     methods: {
-        getRandomEmails() {
-            axios.get(` `).then((response) => {
+        getRandomEmail() {
+            axios.get(`${this.apiPath}random/mail`).then((response) => {
+                let emails = [];
+                while (emails.length < 10) {
 
+                }
             })
         }
     },

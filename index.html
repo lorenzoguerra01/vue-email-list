@@ -36,8 +36,11 @@
 <body>
     <div id="app" class="ms_screen text-center">
         <h1>Vue Email List</h1>
-        <div class="card ms_card">
-            <h2>{{message}}</h2>
+        <div v-cloak class="card ms_card">
+            <ul>
+                <li v-for="(email, index) in rndEmails">{{email}}</li>
+            </ul>
+            <button @click="getRandomEmail()">New Email</button>
         </div>
     </div>
 </body>

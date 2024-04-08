@@ -24,7 +24,10 @@ createApp({
                 axios.get(`${this.apiPath}random/mail`).then((response) => {
                     let email = response.data.response;
                     emailList.push(email);
-                    this.rndEmails = [...emailList];
+                    if (i === 9) {
+                        this.rndEmails = [...emailList];
+                        console.log(this.rndEmails);
+                    }
                 })
             }
         }
